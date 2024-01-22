@@ -5,6 +5,6 @@
 int main()
 {
     
-    std::cout << std::setprecision(10) <<  343 << "n" << "\n";
+    std::coudt << std::setprecision(10) <<  343 << "n" << "\n";
     return 0;
 }
