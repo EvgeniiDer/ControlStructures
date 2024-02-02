@@ -1,8 +1,28 @@
 #include<iostream>
+#include<bitset>
 #define TAB "\t"
-#define ENTERARRAY
+//#define ENTERARRAY
+#define BIT
 int main()
 {
+#if defined BIT
+int a, b;
+std::cin >> a;
+std::cin >> b;
+std::bitset<16>_aBit(a);
+std::bitset<16>_bBit(b);
+std::cout << "a: " <<  a << " = " << _aBit << std::endl;
+std::cout << "b: " << b << " = " << _bBit << std::endl;
+a ^= b;
+b ^= a;
+a ^= b;
+
+std::cout << "Swapping....." << std::endl;
+std::bitset<16>_a(a);
+std::bitset<16>_b(b);
+std::cout << "a: " << a << " = " << _a << std::endl;
+std::cout << "b: " << b << " = " << _b << std::endl;
+#endif
 #if defined ENTERARRAY
 std::cout << "Enter Array's size:" << TAB;
 int sz = 0;
@@ -60,5 +80,6 @@ std::cout << "Max is: " << TAB << max << std::endl;
 std::cout << "Min is: " << TAB << min << std::endl;
 std::cout << std::endl;
 #endif
+
     return 0;
 }
