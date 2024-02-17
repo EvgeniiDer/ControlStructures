@@ -2,7 +2,7 @@
 
 long *Power(const int &p, const int &n);
 
-
+//leaks -atExit -- ./temp проверка на утечку памяти
 int main()
 {
     std::cout << "Enter the number and the power to which you want to raise the number: " << std::endl;
@@ -17,6 +17,7 @@ int main()
     }
     
     return 0;
+
 }
 long *Power(const int & p, const int &n)
 {
