@@ -1,16 +1,15 @@
 #include<iostream>
 
+int Sum(int *arr, int size);
+int Sum(char *ch, int size);
+double Sum(double *arr, int size);
+int Sum(int *arr[], int sizeX, int sizeY);
+double Sum(double *arr[], int sizeX, int sizeY);
+int Sum(char*ch[], int sizeX, int sizeY);
 
-int sum(int *a, int b);
+
+
 int main()
 {
-    int ar[4];
-    std::cout << sum(ar, 4);
-    std::cout << "Hi ALl" << std::endl;
     return 0;
-}
-int sum(int *a, int b)
-{
-    a[b - 2] = 3;
-    return a[1];
 }
