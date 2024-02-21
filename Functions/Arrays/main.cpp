@@ -68,5 +68,29 @@ int main()
     MaxValueInDouble = nullptr;
     std::cout << std::endl;
 
+    std::cout << "Bubble sort ArrayInt: " << "\n";
+    Sort(ArrayInt , size);
+    std::cout << "Bubble sort ArrayDouble: " << "\n";
+    Sort(ArrayDouble, size);
+    std::cout << std::endl;
+
+    std::cout << "Enter how much to shift to the left ArrayInt: " << std::endl;
+    std::cout << "Click on any symbol to Exit the loop" << std::endl;
+    ShiftLeft(ArrayInt, size);
+    std::cin.get();
+    std::cout << "Enter how much to shift to the left ArrayDouble: " << std::endl;
+    std::cout << "Click on any symbol to Exit the loop" << std::endl;
+    ShiftLeft(ArrayDouble, size);
+    std::cout << std::endl;
+
+    std::cout << "Enter how much to shift to the right ArrayInt: " << std::endl;
+    std::cout << "Click on any symbol to Exit the loop" << std::endl;
+    ShiftRight(ArrayInt, size);
+    std::cout << "Enter how much to shift to the right ArrayDouble: " << std::endl;
+    std::cout << "Click on any symbol to Exit the loop" << std::endl;
+    ShiftRight(ArrayDouble, size);
+    std::cout << std::endl;
+
+
     return 0;
 }

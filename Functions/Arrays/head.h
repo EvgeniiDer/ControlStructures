@@ -25,19 +25,19 @@ int *Avg(int *_arr, const int &_size);
 double *Avg(double *_arr, const int &_size);
 
 int *MinValueIn(int *_arr, const int &_size);
-double *MinValueIn(double *arr, const int &size);
+double *MinValueIn(double *_arr, const int &_size);
 
-int *MaxValueIn(int *arr, const int &size);
-double *MaxValueIn(double *arr, const int &size);
+int *MaxValueIn(int *_arr, const int &_size);
+double *MaxValueIn(double *_arr, const int &_size);
 
-void Sort(int *arr, const int &size);
-void Sort(double *arr, const int &size);
+void Sort(int *_arr, const int &s_ize);
+void Sort(double *_arr, const int &_size);
 
-void ShiftLeft(int *arr, const int &size);
-void ShiftLeft(double *arr, const int &size);
+void ShiftLeft(int *_arr, const int &_size);
+void ShiftLeft(double *_arr, const int &_size);
 
-void ShiftRight(int *arr, const int &size);
-void ShiftRight(double *arr, const int &size);
+void ShiftRight(int *_arr, const int &_size);
+void ShiftRight(double *_arr, const int &_size);
 
 
 #endif

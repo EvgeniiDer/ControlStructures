@@ -12,7 +12,7 @@ void Show(double *_arr, const int &_size)
 {
     for(int i = 0; i < _size; i++)
     {
-        std::cout << _arr[i] << "\t";
+        std::cout << _arr[i] << "     ";
     }
     std::cout << std::endl;
 }
@@ -125,14 +125,260 @@ double *MaxValueIn(double *_arr, const int &_size)
 
 void Sort(int *_arr, const int &_size)
 {
-    int *temp = new int(_arr[0]);
+    int temp;
     for(int i = 0; i < _size; i++)
     {
-        if(*temp >= _arr[i + 1])
+        for(int y = 0; y < _size; y++)
         {
-            _arr[i] = *temp;
-            *temp = _arr[i + 1];
-            _arr[i] 
+            if(_arr[i] < _arr[y])
+            {
+                temp = _arr[i];
+                _arr[i] = _arr[y];
+                _arr[y] = temp;
+            }
+        }
+    }
+    Show(_arr, _size);
+}
+void Sort(double *_arr, const int &_size)
+{
+    double temp;
+    for(int i = 0; i < _size; i++)
+    {
+        for(int y = 0; y < _size; y++)
+        {
+            if(_arr[i] < _arr[y])
+            {
+                temp = _arr[i];
+                _arr[i] = _arr[y];
+                _arr[y] = temp;
+            }
+        }
+    }
+    Show(_arr, _size);
+}
+
+void ShiftLeft(int *_arr, const int &_size)
+{
+    int shift = 0;
+    int rightpart = 0;
+    while(std::cin >> shift)
+    {
+        if(shift == 0 || shift == _size)
+        {
+            Show(_arr, _size);
+        }
+        else if(shift > _size)
+            {
+                shift %= _size;
+                int shiftarray[_size];
+                for(int i = 0; i < _size; i++)
+                {
+                    if(shift < _size)
+                    {
+                        shiftarray[i] = _arr[shift++];
+                    }
+                    else{
+                        shiftarray[i] = _arr[rightpart++];
+                    }
+               }
+                for(int i = 0; i < _size; i++)
+                {
+                    _arr[i] = shiftarray[i];
+                }
+                rightpart = 0;
+                Show(_arr, _size);
+            }
+        else
+            {
+                int shiftarray[_size];
+                for(int i = 0; i < _size; i++)
+                {
+                    if(shift < _size)
+                    {
+                        shiftarray[i] = _arr[shift++];
+                    }
+                    else{
+                        shiftarray[i] = _arr[rightpart++];
+                    }
+               }
+                for(int i = 0; i < _size; i++)
+                {
+                    _arr[i] = shiftarray[i];
+                }
+                rightpart = 0;
+                Show(_arr, _size);
+            }
+    
+    }    
+}
+void ShiftLeft(double *_arr, const int &_size)
+{
+    
+    int shift = 0;
+    int rightpart = 0;
+    std::cin.clear();
+    std::cin.ignore();
+    while(std::cin >> shift)
+    {
+        if(shift == 0 || shift == _size)
+        {
+            Show(_arr, _size);
+        }
+        else if(shift > _size)
+            {
+                shift %= _size;
+                double shiftarray[_size];
+                for(int i = 0; i < _size; i++)
+                {
+                    if(shift < _size)
+                    {
+                        shiftarray[i] = _arr[shift++];
+                    }
+                    else{
+                        shiftarray[i] = _arr[rightpart++];
+                    }
+               }
+                for(int i = 0; i < _size; i++)
+                {
+                    _arr[i] = shiftarray[i];
+                }
+                rightpart = 0;
+                Show(_arr, _size);
+            }
+        else
+            {
+                double shiftarray[_size];
+                for(int i = 0; i < _size; i++)
+                {
+                    if(shift < _size)
+                    {
+                        shiftarray[i] = _arr[shift++];
+                    }
+                    else{
+                        shiftarray[i] = _arr[rightpart++];
+                    }
+               }
+                for(int i = 0; i < _size; i++)
+                {
+                    _arr[i] = shiftarray[i];
+                }
+                rightpart = 0;
+                Show(_arr, _size);
+            }
+    
+    }    
+}
+
+void ShiftRight(int *_arr, const int &_size)
+{
+    std::cin.clear();
+    std::cin.ignore();
+    int shift = 0;
+    int leftpart = 0;
+    while(std::cin >> shift)
+    {
+        if(shift == 0 || shift == _size)
+        {
+            Show(_arr, _size);
+        }
+        else if(shift > _size)
+        {
+            shift %= _size;
+            int shiftarray[_size];
+            for(int i = 0; i < _size; i++)
+            {
+                if(shift > 0)
+                {
+                    shiftarray[i] = _arr[_size - shift--];
+                }
+                else
+                {
+                    shiftarray[i] = _arr[leftpart++];
+                }
+            }
+            for(int i = 0; i < _size; i++)
+            {
+                _arr[i] = shiftarray[i];
+            }
+            leftpart = 0;
+            Show(_arr, _size);
+        }
+        else{
+            int shiftarray[_size];
+            for(int i = 0; i < _size; i++)
+            {
+                if(shift > 0)
+                {
+                    shiftarray[i] = _arr[_size - shift--];
+                }
+                else
+                {
+                    shiftarray[i] = _arr[leftpart++];
+                }
+            }
+            for(int i = 0; i < _size; i++)
+            {
+                _arr[i] = shiftarray[i];
+            }
+            leftpart = 0;
+            Show(_arr, _size);
+        }
+    }
+}
+void ShiftRight(double *_arr, const int &_size)
+{
+    std::cin.clear();
+    std::cin.ignore();
+    int shift = 0;
+    int leftpart = 0;
+    while(std::cin >> shift)
+    {
+        if(shift == 0 || shift == _size)
+        {
+            Show(_arr, _size);
+        }
+        else if(shift > _size)
+        {
+            shift %= _size;
+            double shiftarray[_size];
+            for(int i = 0; i < _size; i++)
+            {
+                if(shift > 0)
+                {
+                    shiftarray[i] = _arr[_size - shift--];
+                }
+                else
+                {
+                    shiftarray[i] = _arr[leftpart++];
+                }
+            }
+            for(int i = 0; i < _size; i++)
+            {
+                _arr[i] = shiftarray[i];
+            }
+            leftpart = 0;
+            Show(_arr, _size);
+        }
+        else{
+            double shiftarray[_size];
+            for(int i = 0; i < _size; i++)
+            {
+                if(shift > 0)
+                {
+                    shiftarray[i] = _arr[_size - shift--];
+                }
+                else
+                {
+                    shiftarray[i] = _arr[leftpart++];
+                }
+            }
+            for(int i = 0; i < _size; i++)
+            {
+                _arr[i] = shiftarray[i];
+            }
+            leftpart = 0;
+            Show(_arr, _size);
         }
     }
 }
